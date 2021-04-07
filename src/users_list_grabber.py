@@ -7,7 +7,8 @@ try:
     response.raise_for_status()
     print(response.json())
     with open("users_list.json", 'w') as f:
-	    json.dump(response.json(), f, indent=4)
+        json_data = response.json()
+        json.dump(json_data["data"], f, indent=4)
 except requests.exceptions.HTTPError as errh:
     print(errh)
 except requests.exceptions.ConnectionError as errc:

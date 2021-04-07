@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Get User') {
             steps {
-                echo 'Hello World'
+                sh 'pwd'
+                sh 'ls'
+                sh 'chmod +777 get_user.sh'
+                sh './get_user.sh'
             }
         }
     }
